@@ -15,9 +15,13 @@ wp-content/plugins/hello.php
 wp-content/themes/twenty*/
 
 # ignore node dependency directories
+.env
 node_modules/
 
 # ignore log files and databases
 *.log
 *.sql
 *.sqlite
+
+#IDE
+.idea

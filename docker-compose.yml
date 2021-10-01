@@ -2,38 +2,45 @@ version: "3.3"
     
 services:
   db:
-    image: mysql:latest
-    volumes:
+    image: mysql:latest #Get latest version of official mysql image from docker hub
+    volumes: #Set where the bash will be located for the db service
       - db_data:/var/lib/mysql
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: tpbb1
-      MYSQL_DATABASE: wordpress
-      MYSQL_USER: wordpress
-      MYSQL_PASSWORD: tpbb1
+    restart: always #Restarts service automatically on crash
+    environment: #Sets service environment variables
+      MYSQL_ROOT_PASSWORD: tpbb1 #Set admin password for the MYSQL server
+      MYSQL_DATABASE: wordpress #Set database name for the MYSQL server
+      MYSQL_USER: wordpress #Set username for the MYSQL server
+      MYSQL_PASSWORD: tpbb1 #Set user password for the MYSQL server
     
   wordpress:
-    depends_on:
+    depends_on: #Sets the service as depending upon the db service (a.k.a mySQL server)
       - db
-    image: wordpress:latest
-    volumes:
+    image: wordpress:latest #Get latest version of official wordpress image from docker hub
+    volumes:  #Set where the bash will be located for the wordpress service
       - wordpress_data:/var/www/html
-    ports:
+    ports: #Set what ports the service will listen on
       - "8080:80"
-    restart: always
-    environment:
-      WORDPRESS_DB_HOST: db:3306
-      WORDPRESS_DB_USER: wordpress
-      WORDPRESS_DB_PASSWORD: tpbb1
-      WORDPRESS_DB_NAME: wordpress
+    restart: always #Restarts service automatically on crash
+    environment: #Sets service environment variables
+      WORDPRESS_DB_HOST: db:3306 #Set what host name and port wordpress will use to connect to the database server
+      WORDPRESS_DB_USER: wordpress #Set what username wordpress will use to connect to the database server
+      WORDPRESS_DB_PASSWORD: tpbb1 #Set what password wordpress will use to connect to the database server
+      WORDPRESS_DB_NAME: wordpress #Set database wordpress will access once connected to the database server
     
   phpmyadmin:
-    image: phpmyadmin:latest
-    volumes:
+    image: phpmyadmin:latest #Get latest version of official phpmyadmin image from docker hub
+    volumes:  #Set where the bash will be located for the phpmyadmin service
       - phpmyadmin_data:/var/www/html
-    restart: always
+    ports: #Set what ports the service will listen on
+      - "8081:80"
+    restart: always #Restarts service automatically on crash
+    environment: #Sets service environment variables
+      PHPMYADMIN_ROOT_PASSWORD: tpbb1
+      PHPMYADMIN_USER: wordpress
+      PHPMYADMIN_DATABASE: wordpress
+
         
-volumes:
+volumes: #Sets in what order services must be launched
   db_data: {}
   wordpress_data: {}
   phpmyadmin_data: {}
