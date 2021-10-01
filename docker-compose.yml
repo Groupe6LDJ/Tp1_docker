@@ -31,7 +31,14 @@ services:
     image: phpmyadmin:latest
     volumes:
       - phpmyadmin_data:/var/www/html
+    ports:
+      - "8081:80"
     restart: always
+    environment:
+      PHPMYADMIN_ROOT_PASSWORD: tpbb1
+      PHPMYADMIN_USER: wordpress
+      PHPMYADMIN_DATABASE: wordpress
+
         
 volumes:
   db_data: {}
