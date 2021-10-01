@@ -31,3 +31,7 @@ docker-compose up
 
 🧔 **Bastien BOURGON** _alias_ [@Bastien-Bourgon](https://github.com/Bastien-Bourgon)  
 🧔 **Guyllian BELAYEL** _alias_ [@GuyllianB](https://github.com/GuyllianB)  
+
+## License
+
+Sous License MIT
