@@ -1,40 +1,40 @@
 # Tp1_docker
 
-Mise en service d'un serveur PhpMyAdmin et MySQL pour un site WordPress via Docker
+Setting up a PhpMyAdmin and MySQL server for a WordPress blog via Docker
 
-## Pour commencer
+## TO START
 
 git clone https://github.com/Groupe6LDJ/Tp1_docker.git
 
-### Pour installer et lancer le site
+### TO INSTALL AND RUN THE BLOG
 
 docker-compose up
 
-### Pour accéder au site
+### TO ACCESS THE BLOG
 📄 http://localhost:8080/
 
-### Pour accéder au panneau de configuration du site
+### TO ACCESS THE SITE CONTROL PANEL
 📄http://localhost:8080/wp-admin/
 
-### Pour accéder à la BDD
+### TO ACCESS DATABASE
 📄 http://localhost:8081/
 
-## Images Docker Utilisées
+## DOCKER IMAGES USED
 
 :heavy_check_mark: [phpmyadmin](https://hub.docker.com/_/phpmyadmin) - PhpMyAdmin (A web interface for MySQL and MariaDB)  
 :heavy_check_mark: [mysql](https://hub.docker.com/_/) - MySQL MySQL (A widely used, open-source relational database management system)  
 :heavy_check_mark: [wordpress](https://hub.docker.com/_/wordpress) - WordPress  
 
-## Versions
+## VERSIONS
 🔴 phpmyadmin:latest  
 🔴 mysql:latest  
 🔴 wordpress:latest
 
-## Auteurs
+## AUTHORS
 
 🧔 **Bastien BOURGON** _alias_ [@Bastien-Bourgon](https://github.com/Bastien-Bourgon)  
 🧔 **Guyllian BELAYEL** _alias_ [@GuyllianB](https://github.com/GuyllianB)  
 
-## License
+## LICENSE
 
-Sous License MIT
+MIT License
