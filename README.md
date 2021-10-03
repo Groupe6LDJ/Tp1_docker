@@ -13,6 +13,9 @@ docker-compose up
 ### Pour accéder au site
 📄 http://localhost:8080/
 
+### Pour accéder au panneau de configuration du site
+📄http://localhost:8080/wp-admin/
+
 ### Pour accéder à la BDD
 📄 http://localhost:8081/
 
