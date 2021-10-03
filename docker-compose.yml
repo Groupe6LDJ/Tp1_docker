@@ -35,9 +35,9 @@ services:
       - "8081:80"
     restart: always #Restarts service automatically on crash
     environment: #Sets service environment variables
-      PHPMYADMIN_ROOT_PASSWORD: tpbb1
-      PHPMYADMIN_USER: wordpress
-      PHPMYADMIN_DATABASE: wordpress
+      PHPMYADMIN_ROOT_PASSWORD: tpbb1 #Set admin password used by phpmyadmin to access the database server
+      PHPMYADMIN_USER: wordpress #Set username used by phpmyadmin to access the database server
+      PHPMYADMIN_DATABASE: wordpress #Set what database phpmyadmin must access on the database server
 
         
 volumes: #Sets in what order services must be launched
