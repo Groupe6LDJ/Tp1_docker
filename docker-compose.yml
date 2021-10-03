@@ -1,6 +1,13 @@
 version: "3.3"
-    
+
 services:
+  ng:
+    build:
+      context: .
+      target: 'wordpress_tp'
+    container_name: wordpress_tp
+
+
   db:
     image: mysql:latest #Get latest version of official mysql image from docker hub
     volumes: #Set where the bash will be located for the db service
