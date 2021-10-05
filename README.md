@@ -8,7 +8,7 @@ git clone https://github.com/Groupe6LDJ/Tp1_docker.git
 
 ### TO INSTALL AND RUN THE BLOG
 
-cd Tp1_docker
+cd Tp1_docker  
 docker-compose up
 
 ### TO ACCESS THE BLOG
