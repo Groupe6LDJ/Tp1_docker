@@ -1,10 +1,15 @@
 version: "3.3"
-    
+
 services:
+
   db:
     image: mysql:latest #Get latest version of official mysql image from docker hub
+    ports: #Set what ports the service will listen on
+      - "8082:80"
+    expose: #Set what ports the service will be exposed
+      - "8082"
     volumes: #Set where the bash will be located for the db service
-      - db_data:/var/lib/mysql
+      - ./data/db_data:/var/lib/mysql
     restart: always #Restarts service automatically on crash
     environment: #Sets service environment variables
       MYSQL_ROOT_PASSWORD: tpbb1 #Set admin password for the MYSQL server
@@ -40,7 +45,7 @@ services:
       PHPMYADMIN_DATABASE: wordpress #Set what database phpmyadmin must access on the database server
 
         
-volumes: #Sets in what order services must be launched
+volumes: #Sets in what order services must be launched and where
   db_data: {}
   wordpress_data: {}
   phpmyadmin_data: {}
